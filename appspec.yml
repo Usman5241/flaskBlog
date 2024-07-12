@@ -5,10 +5,10 @@ files:
     destination: /home/ec2-user/flaskBlog
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies.sh
+    - location: scripts/install_docker_compose.sh
       timeout: 300
       runas: ec2-user
   ApplicationStart:
-    - location: scripts/start_server.sh
+    - location: scripts/start_docker_compose.sh
       timeout: 300
       runas: ec2-user
