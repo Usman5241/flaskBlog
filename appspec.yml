@@ -2,13 +2,14 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/flaskBlog
+      destination: /home/ubuntu/flaskBlog
+    file_exists_behavior: OVERWRITE
 hooks:
   BeforeInstall:
     - location: scripts/install_docker_compose.sh
       timeout: 300
-      runas: ec2-user
+      runas: root
   ApplicationStart:
     - location: scripts/start_docker_compose.sh
       timeout: 300
-      runas: ec2-user
+      runas: root
